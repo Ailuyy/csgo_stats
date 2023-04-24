@@ -26,9 +26,6 @@ for dic in tmp:
 
 graph_data_labels = ["total_kills", "total_deaths", "total_planted_bombs", "total_defused_bombs", "total_time_played", "total_wins"]
 all_main = main_A + main_B + main_C
-print(main_A, main_B, main_C)
-print(all_main)
-print(graph_data_labels)
 #graphs
 barWidth = 0.3
 
@@ -61,7 +58,6 @@ for i, x in enumerate(graph_data_labels):
     merged_dict[x] = [all_main[i]]
 
 df = pd.DataFrame.from_dict(merged_dict, orient="index", columns=["main_acc"]).astype(int)
-print(df)
 df.to_csv("stats_python.csv", sep=";")
 
 plt.savefig("charts.png")
