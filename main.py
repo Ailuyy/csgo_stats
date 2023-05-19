@@ -3,8 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-main = open("main.json", "r").read()
-dcm = json.loads(main)
+with open("main.json", "r") as file:
+    dcm = json.loads(file.read())
+
 tmp = dcm.get("playerstats").get("stats")
 
 main_A = []
